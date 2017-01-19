@@ -1,0 +1,15 @@
+{
+    "name": "johnroyer/plurk-php",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zero",
+            "homepage": "https://github.com/johnroyer"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
+    }
+}
