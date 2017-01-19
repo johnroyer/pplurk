@@ -19,5 +19,10 @@
         "psr-4": {
             "Zeroplex\\Plurk\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Zeroplex\\Plurk\\Test\\": "tests/src/"
+        }
     }
 }
