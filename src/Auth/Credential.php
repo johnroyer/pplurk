@@ -9,24 +9,35 @@ class Credential
     private $token;
     private $secret;
 
-    public function __construct($appKey, $appSecret, $token, $secret)
-    {
+    public function __construct(
+        string $appKey,
+        string $appSecret,
+        string $token,
+        string $secret
+    ) {
         $this->appKey = $appKey;
         $this->appSecret = $appSecret;
         $this->token  = $token;
         $this->secret = $secret;
     }
 
-    /**
-     * @param string $key property name
-     * @return string
-     */
-    public function __get($key)
+    public function getAppKey(): string
     {
-        if (!property_exists($this, $key)) {
-            throw new \InvalidArgumentException('key is not exists');
-        }
+        return $this->appKey;
+    }
 
-        return $this->$key;
+    public function getAppSecret(): string
+    {
+        return $this->appSecret;
+    }
+
+    public function getToken(): string
+    {
+        return $this->token;
+    }
+
+    public function getSecret(): string
+    {
+        return $this->secret;
     }
 }
