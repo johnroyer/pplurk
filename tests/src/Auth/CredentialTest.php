@@ -10,10 +10,10 @@ class CredentialTest extends TestCase
     public function setUp()
     {
         $this->cred = new Credential(
-            '1',
-            '2',
-            '3',
-            '4'
+            'appKey',
+            'appSecret',
+            'token',
+            'secret'
         );
     }
 
@@ -22,28 +22,23 @@ class CredentialTest extends TestCase
         $this->cred = null;
     }
 
-    /**
-     * @dataProvider keyProvider
-     */
-    public function testGetKey($key, $expected)
+    public function testAppKeyGetter()
     {
+        $this->assertSame('appKey', $this->cred->getAppKey());
     }
 
-    public function keyProvider()
+    public function testAppSecretGetter()
     {
-        return [
-            ['appKey', '1'],
-            ['appSecret', '2'],
-            ['token', '3'],
-            ['secret', '4'],
-        ];
+        $this->assertSame('appSecret', $this->cred->getAppSecret());
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testGetWrongKey()
+    public function testTokenGetter()
     {
-        $this->cred->nonExist;
+        $this->assertSame('token', $this->cred->getToken());
+    }
+
+    public function testSecretGetter()
+    {
+        $this->assertSame('secret', $this->cred->getSecret());
     }
 }
